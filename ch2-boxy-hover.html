@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Boxy Layout example</title>
+    <meta charset="utf-8">
+    <style>
+    	h1 {
+    		font-family: Optima,Segoe,Segoe UI,Candara,Calibri,Arial,sans-serif; font-size: 32px; font-style: normal; font-variant: normal; font-weight: 500;
+    		text-align: center;
+    	}
+    	img { object-fit: cover;  border-radius: 10px ; display: block; max-width: 100%; }
+    	img:hover {    		z-index: 10;
+    		box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.75);
+        }
+
+    	.wrapper {
+    		display: grid;
+    		grid-template-columns: repeat(14, [gutter] 10px [col] 1fr) ;
+            grid-template-rows: [row] auto repeat(14, [gutter] 10px [row] 60px);
+    	}
+
+    	header { 
+    		grid-column: col / span gutter 12; 
+    		grid-row: 1 / 1;
+    	}
+
+    	.box1 {
+    		grid-column: col 1 / span gutter 4; 
+    		grid-row: row 2 / span gutter 2;
+    	}
+
+    	.box1:hover {
+    		grid-column: gutter 1 / span gutter 5;
+    		grid-row: gutter 1 / span gutter 3;
+    	}
+
+    	.box2 {
+    		grid-column: col 1 / span gutter 9; 
+    		grid-row: row 7 / span gutter 4;
+    	}
+
+    	.box2:hover {
+    		grid-column: gutter 1 / span gutter 10; 
+    		grid-row: gutter 6 / span gutter 5;
+    	}
+
+    	.box3 {
+    		grid-column: col 1 / span gutter 12; 
+    		grid-row: row 11 / span gutter 3;
+    	}
+
+    	.box3:hover {
+    		grid-column: gutter 1 / span gutter 13; 
+    		grid-row: gutter 10 / span gutter 4;
+    	}
+
+    	.box4 {
+    		grid-column: col 10 / span gutter 3; 
+    		grid-row: row 2 / span gutter 3;
+    	}
+
+    	.box4:hover {
+    		grid-column: gutter 10 / span gutter 4; 
+    		grid-row: gutter 1 / span gutter 4;
+    	}
+
+    	.box5 {
+    		grid-column: col 5 / span gutter 5; 
+    		grid-row: row 2 / span gutter 5;
+    	}
+
+    	.box5:hover {
+    		grid-column: gutter 5 / span gutter 6; 
+    		grid-row: gutter 1 / span gutter 6;
+    	}
+
+    	.box6 {
+    		grid-column: col 1 / span gutter 4; 
+    		grid-row: row 4 / span gutter 3;
+    	}
+
+    	.box6:hover {
+    		grid-column: gutter 1 / span gutter 5; 
+    		grid-row: gutter 3 / span gutter 4;
+    	}
+
+    	.box7 {
+    		grid-column: col 10 / span gutter 3; 
+    		grid-row: row 5 / span gutter 4;
+    	}
+
+    	.box7:hover {
+    		grid-column: gutter 10 / span gutter 4; 
+    		grid-row: gutter 4 / span gutter 5;
+    	}
+
+    	.box8 {
+    		grid-column: col 10 / span gutter 3; 
+    		grid-row: row 9 / span gutter 2;
+    	}
+
+    	.box8:hover {
+    		grid-column: gutter 10 / span gutter 4; 
+    		grid-row: gutter 8 / span gutter 3;
+    	}
+
+    </style>
+  </head>
+
+  <body>
+
+  	<div class="wrapper">
+  		<header>
+  			<h1>Little boxes layout</h1>
+  		</header>
+
+  		
+  		<img src="images/balloon1.jpg" alt="Bristol Balloon Fiesta" class="box1">
+  		<img src="images/balloon2.jpg" alt="Bristol Balloon Fiesta" class="box2">
+  		<img src="images/balloon3.jpg" alt="Bristol Balloon Fiesta" class="box3">
+  		<img src="images/balloon4.jpg" alt="Bristol Balloon Fiesta" class="box4">
+  		<img src="images/balloon5.jpg" alt="Bristol Balloon Fiesta" class="box5">
+  		<img src="images/balloon6.jpg" alt="Bristol Balloon Fiesta" class="box6">
+  		<img src="images/balloon7.jpg" alt="Bristol Balloon Fiesta" class="box7">
+  		<img src="images/balloon8.jpg" alt="Bristol Balloon Fiesta" class="box8">
+
+
+  	</div>
+
+  </body>
+
+</html>

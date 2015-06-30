@@ -1,0 +1,131 @@
+html {
+  font: 1.1em/1.3 Gill Sans,Gill Sans MT,Calibri,sans-serif ;
+}
+
+body {
+    background-color: #fff;
+    color: #333;
+    padding: 20px;
+}
+
+img {
+	max-width: 100%;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.mainheader li {
+	border: 1px solid #ccc;
+	background-color: #f2f2f2;
+	margin: 0 0 10px 0;
+}
+
+.mainheader li a {
+	display: block;
+	text-decoration: none;
+	color: #000;
+	padding: 10px 1em 10px 1em;
+}
+
+.box {
+	background-color: #f2f2f2;
+	padding: 10px;
+	border: 1px solid #ccc;
+}
+
+.box h2 {
+	font-weight: normal;
+	margin: 0;
+	padding: 0;
+}
+
+.box a:link, .box a:visited {
+	color: rgb(47,57,73);
+}
+
+.cta-list a {
+	text-decoration: none;
+}
+
+
+
+@media only screen and (min-width: 460px) {
+
+	.mainheader { grid-area: header; margin: 0 0 20px 0;}
+	.feature-pull { grid-area: featurepull ; }
+	.feature { grid-area: feature; }
+	.gallery { grid-area: secondary; }
+	.mainfooter { grid-area: footer; }
+
+
+    .wrapper {
+        display: grid;
+        width: 90%;
+        margin: 0 auto 0 auto;
+		grid-template-columns: auto;
+        grid-template-rows: auto ;
+        grid-template-areas: 
+              "header"
+              "feature"
+              "featurepull"
+              "secondary"
+              "footer";
+    }
+
+    .mainheader ul {
+		display: flex;
+	}
+
+	.mainheader li {
+		margin: 0 10px 0 0;
+	}
+
+	.gallery {
+		display: flex;
+	    margin: 20px 0 20px 0;
+	    justify-content: space-between;
+	    flex-wrap: wrap;
+	} 
+
+    .gallery li {
+	       	width: 45%;
+	       	margin: 0 0 20px 0;
+	       }
+
+	       .cta-list li {
+	       	margin: 0 0 20px 0;
+	       }
+       }
+
+       @media only screen and (min-width: 760px) {
+       	  .wrapper {
+       		grid-template-columns: 48% 4% 48%;
+            grid-template-rows: auto ;
+            grid-template-areas: 
+              "header header header"
+              "featurepull . feature"
+              "secondary secondary secondary"
+              "footer footer footer"
+            ;
+          }
+
+          .gallery li {
+	       	width: 21%;
+	       	margin: 0;
+	       }
+
+	       .cta-list {
+		      display: flex;
+		      justify-content: space-between;
+		    }
+
+		    .cta-list li {
+		    	width: 42%;
+		    }
+
+       }
+
