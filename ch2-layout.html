@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="layout-styles.css" type="text/css">
     <style>
-      
+
 
       .mainheader { grid-area: header; }
       .content { grid-area: content; }
@@ -19,14 +19,17 @@
 
         grid-template-columns: 9fr 40px 3fr;
         grid-template-rows: auto ;
-        grid-template-areas: 
+        grid-template-areas:
           "header header header"
           "content . sidebar"
           "footer footer footer"
         ;
       }
-      
-      /* article grid setup */
+
+      /* article grid setup
+      A current regression in the Chrome implementation means that the text overflows in this example.
+      https://bugs.chromium.org/p/chromium/issues/detail?id=619567
+      */
       .content .primary { grid-area: article-primary; }
       .content aside { grid-area: article-secondary; }
       .content > h1 { grid-area: chapterhead ; }
@@ -36,9 +39,9 @@
         grid-template-columns: 9fr 40px 3fr;
         grid-template-rows: auto;
         grid-template-areas:
-          "chapterhead . ." 
+          "chapterhead . ."
           "article-primary . article-secondary"
-      ; 
+      ;
       }
     </style>
   </head>
@@ -47,13 +50,13 @@
   		<div class="wrapper">
   			<header class="mainheader">
   				<h1>Excerpts from the book <em>The Bristol Royal Mail</em></h1>
-  				
+
   			</header>
 
   			<article class="content">
             <h1>Post letter boxes: position, violation, peculiar uses</h1>
             <div class="primary">
-              
+
               <p>A remarkable case was that of a servant who was a somnambulist, and who for some time wrote letters in her sleep, night after night, and took them to adjacent letter boxes to post. Sometimes she was fully attired, and at other times only partially so. As a rule, the letters were properly addressed, but the girl did not always place postage stamps upon them.</p>
 
               <p>Occasionally the postmen have to encounter the difficulties arising from a frost-bound letter box. Such a case occurred with a box situated on the summit of the Mendip Hills. The letter box and the wall in which the box is built were found by the postman to be covered with ice, caused by rain and snow having frozen on them. The door resisted all his efforts to open it, and he had to leave it for the night. On making another effort when morning came, it taxed his ingenuity and that of other interested and willing helpers to get the box open. Hot water was tried, paraffin was poured into the lock, and it was only after a hammer had been used and a fire in a movable grate had been applied for a time that the lid could be opened.</p>
@@ -70,7 +73,7 @@
 
   			<aside class="sidebar">
           <figure>
-          <img src="images/postmaster.jpg" alt="photo of the postmaster"> 
+          <img src="images/postmaster.jpg" alt="photo of the postmaster">
           <figcaption>The Postmaster</figcaption>
         </figure>
   			</aside>
