@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>A Responsive Layout example</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../layout-styles.css" type="text/css" />
+    <style>
+      .mainheader {
+        grid-area: header;
+      }
+      .content {
+        grid-area: content;
+      }
+      .sidebar {
+        grid-area: sidebar;
+      }
+      .mainfooter {
+        grid-area: footer;
+      }
+
+      /* article grid setup */
+      .content .primary {
+        grid-area: article-primary;
+      }
+      .content aside {
+        grid-area: article-secondary;
+      }
+      .content > h1 {
+        grid-area: chapterhead;
+      }
+
+      /* 
+      declare the grid
+      one column but pull the photo up to above the main content */
+      @media only screen and (min-width: 460px) {
+        .wrapper {
+          display: grid;
+          width: 90%;
+          margin: 0 auto 0 auto;
+          grid-template-areas:
+            "header"
+            "sidebar"
+            "content"
+            "footer";
+        }
+
+        /* in the nested grid pull the aside to the top but make it a smaller font */
+        .content {
+          display: grid;
+          grid-template-areas:
+            "chapterhead"
+            "article-secondary"
+            "article-primary";
+        }
+
+        article aside {
+          font-size: 0.75rem;
+        }
+      }
+
+      /* go to 2 cols for the wrapper grid */
+      @media only screen and (min-width: 700px) {
+        .wrapper {
+          grid-template-columns: 3fr 1fr;
+          gap: 40px;
+          grid-template-areas:
+            "header header"
+            "content sidebar"
+            "footer footer";
+        }
+      }
+
+      /* return to 2 cols in the inner grid */
+      @media only screen and (min-width: 980px) {
+        .content {
+          grid-template-columns: 3fr 1fr;
+          gap: 40px;
+          grid-template-areas:
+            "chapterhead ."
+            "article-primary article-secondary";
+        }
+
+        article aside {
+          font-size: 100%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header class="mainheader">
+        <h1>Excerpts from the book <em>The Bristol Royal Mail</em></h1>
+      </header>
+
+      <article class="content">
+        <h1>Post letter boxes: position, violation, peculiar uses</h1>
+        <div class="primary">
+          <p>
+            A remarkable case was that of a servant who was a somnambulist, and
+            who for some time wrote letters in her sleep, night after night, and
+            took them to adjacent letter boxes to post. Sometimes she was fully
+            attired, and at other times only partially so. As a rule, the
+            letters were properly addressed, but the girl did not always place
+            postage stamps upon them.
+          </p>
+
+          <p>
+            Occasionally the postmen have to encounter the difficulties arising
+            from a frost-bound letter box. Such a case occurred with a box
+            situated on the summit of the Mendip Hills. The letter box and the
+            wall in which the box is built were found by the postman to be
+            covered with ice, caused by rain and snow having frozen on them. The
+            door resisted all his efforts to open it, and he had to leave it for
+            the night. On making another effort when morning came, it taxed his
+            ingenuity and that of other interested and willing helpers to get
+            the box open. Hot water was tried, paraffin was poured into the
+            lock, and it was only after a hammer had been used and a fire in a
+            movable grate had been applied for a time that the lid could be
+            opened.
+          </p>
+
+          <p>
+            A letter box erected in a brick pillar in a secluded spot on the
+            East Harptree road, about a mile distant from any habitation, was,
+            late one night, damaged to the extent of having its iron door
+            completely smashed off, apparently either by means of a large stone
+            which lay at its base when the violation was discovered, or by means
+            of a hammer and jemmy. Although the adjacent ground, ditches, and
+            hedges were searched, no trace of the iron door could be found. As
+            three roysterers were known to have passed the box on the night in
+            question, it was assumed that the damage was done by them out of
+            pure mischief and not from any desire to rob Her Majesty's mails.
+            Whether such were the case or not, they had the unpleasant
+            experience of being locked up over the Sunday on suspicion.
+          </p>
+        </div>
+
+        <aside>
+          <p>
+            The three hundred and fifty pillar and wall letter boxes are placed
+            at convenient points, regard being had to the wants of the immediate
+            neighbourhood that each has to serve—to approach by paved crossings,
+            to contiguity to a public lamp, to being out of the way of
+            pedestrians and as far removed from mud-splashing as possible. At
+            the same time, the inspectors endeavour to place the boxes so that
+            they may be an attraction, rather than an eyesore, to the spot where
+            erected.
+          </p>
+        </aside>
+      </article>
+
+      <aside class="sidebar">
+        <figure>
+          <img src="images/postmaster.jpg" alt="photo of the postmaster" />
+          <figcaption>The Postmaster</figcaption>
+        </figure>
+      </aside>
+
+      <footer class="mainfooter">
+        <p>
+          Excerpts from
+          <a href="http://www.gutenberg.org/files/34197/34197-h/34197-h.htm"
+            >The Project Gutenberg EBook of The Bristol Royal Mail, by R. C.
+            Tombs</a
+          >.
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>

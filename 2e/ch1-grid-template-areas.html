@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Grid Template Areas</title>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        margin: 40px;
+      }
+
+      .sidebar {
+        grid-area: sidebar;
+      }
+
+      .content {
+        grid-area: content;
+      }
+
+      .header {
+        grid-area: header;
+      }
+
+      .footer {
+        grid-area: footer;
+      }
+
+      .wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:
+          "header header header"
+          "sidebar content content"
+          "footer footer footer";
+        background-color: #fff;
+        color: #444;
+      }
+
+      .box {
+        background-color: rgb(120, 70, 123);
+        border: 5px solid rgb(88, 55, 112);
+        color: #fff;
+        border-radius: 5px;
+        padding: 20px;
+        font: 150%/1.3 "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
+      }
+
+      .header,
+      .footer {
+        background-color: rgb(23, 14, 41);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="box header">Header</div>
+      <div class="box sidebar">Sidebar</div>
+      <div class="box content">Content</div>
+      <div class="box footer">Footer</div>
+    </div>
+  </body>
+</html>
