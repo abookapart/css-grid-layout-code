@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>With no subgrid</title>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        margin: 40px;
+      }
+      .wrapper {
+        display: grid;
+        grid-template-columns: 2.5fr 1fr 0.5fr;
+        gap: 20px;
+        background-color: #fff;
+        color: #444;
+      }
+
+      .wrapper > * {
+        background-color: rgb(120, 70, 123);
+        border: 5px solid rgb(88, 55, 112);
+        color: #fff;
+        border-radius: 5px;
+        padding: 20px;
+        font: 150%/1.3 "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans",
+          Geneva, Verdana, sans-serif;
+        margin: 0;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      li {
+        background-color: #fff;
+        color: #444;
+        border-radius: 5px;
+        padding: 10px;
+      }
+
+      .box1 {
+        grid-column: 1;
+        grid-row: 1;
+      }
+
+      .box2 {
+        grid-column: 2 / 4;
+        grid-row: 1;
+      }
+
+      .box3 {
+        grid-column: 1 / -1;
+        grid-row: 2;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="box1">A</div>
+      <div class="box2">B</div>
+      <ul class="box3">
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+      </ul>
+    </div>
+  </body>
+</html>
